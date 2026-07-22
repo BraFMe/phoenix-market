@@ -1,32 +1,44 @@
-/*======================================================
-        PHOENIX MARKET 8.0 PREMIUM
+/*=========================================================
+        PHOENIX MARKET PREMIUM+
+        STYLE.CSS
         PARTE 1
-======================================================*/
+=========================================================*/
+
+/*========== VARIABLES ==========*/
 
 :root{
 
 --primary:#2563EB;
 --primary-dark:#1D4ED8;
+
+--white:#ffffff;
+
 --dark:#111827;
+
 --gray:#6B7280;
---white:#FFFFFF;
 
 --glass:rgba(255,255,255,.72);
 
---shadow:
-0 20px 55px rgba(15,23,42,.10);
-
---shadow-hover:
-0 30px 70px rgba(15,23,42,.18);
+--glass-border:rgba(255,255,255,.55);
 
 --radius:30px;
 
+--shadow:
+0 18px 50px rgba(15,23,42,.10);
+
+--shadow-hover:
+0 28px 70px rgba(15,23,42,.18);
+
 }
+
+/*========== RESET ==========*/
 
 *{
 
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
 
 }
@@ -39,13 +51,12 @@ scroll-behavior:smooth;
 
 body{
 
-font-family:'Inter',sans-serif;
+font-family:"Inter",sans-serif;
 
 background:
-
 linear-gradient(
 180deg,
-#edf4ff 0%,
+#eef5ff 0%,
 #f7f9fc 45%,
 #ffffff 100%);
 
@@ -55,67 +66,103 @@ min-height:100vh;
 
 overflow-x:hidden;
 
-padding:45px 20px;
+padding:45px 22px;
 
 }
 
-/*====================================
-        FONDO PREMIUM
-====================================*/
+/*========== FONDO ==========*/
 
 .background{
 
 position:fixed;
 
-width:620px;
+inset:0;
 
-height:620px;
+z-index:-2;
+
+overflow:hidden;
+
+}
+
+.background::before{
+
+content:"";
+
+position:absolute;
+
+width:650px;
+
+height:650px;
 
 left:50%;
 
-top:-260px;
+top:-250px;
 
 transform:translateX(-50%);
 
-background:
+border-radius:50%;
 
+background:
 radial-gradient(circle,
-rgba(37,99,235,.22),
+rgba(37,99,235,.18),
 transparent 70%);
 
-filter:blur(100px);
+filter:blur(80px);
 
-z-index:-1;
+animation:halo 8s ease-in-out infinite;
 
 }
 
-/*====================================
-        CONTENEDOR
-====================================*/
+.background::after{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+right:-120px;
+
+bottom:-120px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,
+rgba(59,130,246,.10),
+transparent 70%);
+
+filter:blur(60px);
+
+}
+
+/*========== CONTENEDOR ==========*/
 
 .container{
 
-max-width:640px;
+max-width:650px;
 
 margin:auto;
 
-animation:fadeUp .8s ease;
-
 }
 
-/*====================================
-            HERO
-====================================*/
+/*========== HERO ==========*/
 
 .hero{
 
 text-align:center;
 
-margin-bottom:42px;
+padding-top:10px;
+
+margin-bottom:34px;
 
 animation:fadeDown .9s ease;
 
 }
+
+/*========== LOGO ==========*/
 
 .logo-box{
 
@@ -125,13 +172,38 @@ justify-content:center;
 
 align-items:center;
 
-margin-bottom:-18px;
+position:relative;
+
+margin-bottom:-10px;
+
+}
+
+.logo-box::before{
+
+content:"";
+
+position:absolute;
+
+width:360px;
+
+height:360px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,
+rgba(37,99,235,.14),
+transparent 70%);
+
+filter:blur(28px);
+
+z-index:-1;
 
 }
 
 .logo{
 
-width:330px;
+width:340px;
 
 max-width:92vw;
 
@@ -139,21 +211,25 @@ height:auto;
 
 display:block;
 
-margin:auto;
+object-fit:contain;
 
 filter:
-
 drop-shadow(0 25px 45px rgba(37,99,235,.18));
 
-animation:float 6s ease-in-out infinite;
+transition:
+transform .35s,
+filter .35s;
 
-transition:.35s;
+animation:float 6s ease-in-out infinite;
 
 }
 
 .logo:hover{
 
-transform:scale(1.04);
+transform:scale(1.05);
+
+filter:
+drop-shadow(0 30px 60px rgba(37,99,235,.28));
 
 }
 
@@ -165,9 +241,9 @@ font-weight:800;
 
 letter-spacing:-2px;
 
-margin-bottom:12px;
+margin-top:-5px;
 
-color:#111827;
+margin-bottom:10px;
 
 }
 
@@ -177,17 +253,15 @@ max-width:520px;
 
 margin:auto;
 
-font-size:1.12rem;
+font-size:1.08rem;
 
 line-height:1.8;
 
-color:#6B7280;
+color:var(--gray);
 
 }
 
-/*====================================
-            BOTONES
-====================================*/
+/*========== BOTONES ==========*/
 
 .buttons{
 
@@ -199,39 +273,41 @@ gap:18px;
 
 margin-top:35px;
 
-margin-bottom:45px;
+margin-bottom:48px;
 
 }
 
 .button{
 
+position:relative;
+
 display:flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 gap:15px;
 
 padding:22px;
 
-border-radius:26px;
+border-radius:24px;
 
 text-decoration:none;
 
-font-size:18px;
-
 font-weight:700;
 
-color:white;
+font-size:18px;
+
+color:#fff;
+
+overflow:hidden;
 
 box-shadow:var(--shadow);
 
-transition:.35s;
-
-position:relative;
-
-overflow:hidden;
+transition:
+transform .30s,
+box-shadow .30s;
 
 }
 
@@ -241,9 +317,9 @@ content:"";
 
 position:absolute;
 
-top:0;
-
 left:-120%;
+
+top:0;
 
 width:120%;
 
@@ -254,10 +330,10 @@ background:
 linear-gradient(
 90deg,
 transparent,
-rgba(255,255,255,.28),
+rgba(255,255,255,.30),
 transparent);
 
-transition:.6s;
+transition:.7s;
 
 }
 
@@ -289,7 +365,11 @@ font-size:20px;
 
 .primary{
 
-background:linear-gradient(135deg,#2563EB,#1D4ED8);
+background:
+linear-gradient(
+135deg,
+#2563EB,
+#1D4ED8);
 
 }
 
@@ -301,339 +381,31 @@ background:#111827;
 
 .whatsapp{
 
-background:linear-gradient(135deg,#25D366,#16A34A);
+background:
+linear-gradient(
+135deg,
+#25D366,
+#16A34A);
 
 }
 
 .facebook{
 
-background:linear-gradient(135deg,#1877F2,#2563EB);
+background:
+linear-gradient(
+135deg,
+#1877F2,
+#2563EB);
 
 }
 
 .instagram{
 
 background:
-
 linear-gradient(
 135deg,
 #833AB4,
 #E1306C,
 #FCAF45);
-
-}
-/*======================================================
-            TARJETA PREMIUM
-======================================================*/
-
-.card{
-
-background:rgba(255,255,255,.78);
-
-backdrop-filter:blur(20px);
-
--webkit-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.55);
-
-border-radius:32px;
-
-padding:36px;
-
-box-shadow:
-
-0 25px 60px rgba(15,23,42,.10);
-
-margin-bottom:50px;
-
-animation:fadeUp 1s ease;
-
-}
-
-.card h2{
-
-text-align:center;
-
-font-size:2rem;
-
-font-weight:800;
-
-margin-bottom:30px;
-
-letter-spacing:-1px;
-
-color:#111827;
-
-}
-
-.feature{
-
-display:flex;
-
-align-items:flex-start;
-
-gap:18px;
-
-padding:18px;
-
-margin-bottom:18px;
-
-border-radius:20px;
-
-transition:.35s;
-
-}
-
-.feature:last-child{
-
-margin-bottom:0;
-
-}
-
-.feature:hover{
-
-background:rgba(37,99,235,.05);
-
-transform:translateY(-4px);
-
-}
-
-.feature i{
-
-font-size:26px;
-
-color:#2563EB;
-
-min-width:30px;
-
-margin-top:2px;
-
-}
-
-.feature h3{
-
-font-size:1.08rem;
-
-font-weight:700;
-
-margin-bottom:6px;
-
-color:#111827;
-
-}
-
-.feature p{
-
-font-size:.97rem;
-
-line-height:1.75;
-
-color:#6B7280;
-
-}
-
-/*======================================================
-                FOOTER
-======================================================*/
-
-footer{
-
-text-align:center;
-
-padding:10px 0 25px;
-
-}
-
-.footer-logo{
-
-width:80px;
-
-margin-bottom:14px;
-
-opacity:.95;
-
-}
-
-footer p{
-
-font-weight:700;
-
-font-size:1rem;
-
-color:#111827;
-
-margin-bottom:8px;
-
-}
-
-footer span{
-
-color:#6B7280;
-
-font-size:.92rem;
-
-}
-
-/*======================================================
-              ANIMACIONES
-======================================================*/
-
-@keyframes fadeDown{
-
-from{
-
-opacity:0;
-
-transform:translateY(-35px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(35px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-8px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/*======================================================
-              RESPONSIVE
-======================================================*/
-
-@media (max-width:640px){
-
-body{
-
-padding:28px 18px;
-
-}
-
-.logo{
-
-width:270px;
-
-max-width:92vw;
-
-}
-
-.hero h1{
-
-font-size:2.6rem;
-
-}
-
-.subtitle{
-
-font-size:1rem;
-
-}
-
-.button{
-
-padding:20px;
-
-font-size:17px;
-
-}
-
-.card{
-
-padding:28px;
-
-}
-
-.card h2{
-
-font-size:1.65rem;
-
-}
-
-.feature{
-
-padding:15px;
-
-gap:15px;
-
-}
-
-}
-
-@media (max-width:420px){
-
-.logo{
-
-width:235px;
-
-}
-
-.hero h1{
-
-font-size:2.2rem;
-
-}
-
-.button{
-
-font-size:16px;
-
-padding:18px;
-
-}
-
-.card{
-
-padding:22px;
-
-}
-
-.feature i{
-
-font-size:22px;
-
-}
 
 }
