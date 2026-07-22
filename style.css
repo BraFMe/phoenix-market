@@ -328,7 +328,7 @@ body {
 }
 
 /*==================================================
-        FOOTER (Logo Inferior Pequeño Controlado)
+        FOOTER (Limpio, Fino y Discreto)
 ==================================================*/
 
 footer {
@@ -342,30 +342,24 @@ footer {
 }
 
 .footer-logo {
-  width: 54px !important;
-  max-width: 54px;
+  width: 45px !important;
+  max-width: 45px;
   height: auto;
   margin-bottom: 12px;
-  opacity: 0.9;
+  opacity: 0.85;
   display: block;
-}
-
-footer p {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--oscuro);
-  margin-bottom: 4px;
 }
 
 footer span {
-  font-size: 0.8rem;
-  color: #94a3b8;
+  font-size: 0.85rem;
+  color: var(--gris);
   max-width: 320px;
   line-height: 1.4;
   display: block;
+  font-weight: 400;
 }
 
-/* Estilos de la línea legal agregada */
+/* Línea de copyright discreta */
 footer .footer-legal {
   margin-top: 16px;
   padding-top: 12px;
@@ -375,8 +369,9 @@ footer .footer-legal {
 
 footer .footer-legal p {
   font-weight: 400;
-  font-size: 0.75rem;
-  color: var(--gris);
+  font-size: 0.72rem;
+  color: #94a3b8;
+  letter-spacing: 0.2px;
 }
 
 /*==================================================
