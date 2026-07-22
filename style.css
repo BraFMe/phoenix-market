@@ -1,5 +1,5 @@
 /*=========================================================
-        PHOENIX MARKET PREMIUM+
+        PHOENIX MARKET 9.0
         STYLE.CSS
         PARTE 1
 =========================================================*/
@@ -12,20 +12,16 @@
 --primary-dark:#1D4ED8;
 
 --dark:#111827;
-
 --gray:#6B7280;
-
---white:#ffffff;
-
---bg:#EEF4FF;
+--white:#FFFFFF;
 
 --radius:28px;
 
 --shadow:
-0 20px 50px rgba(15,23,42,.12);
+0 18px 45px rgba(15,23,42,.10);
 
 --shadow-hover:
-0 30px 70px rgba(15,23,42,.18);
+0 30px 70px rgba(15,23,42,.16);
 
 }
 
@@ -34,9 +30,7 @@
 *{
 
 margin:0;
-
 padding:0;
-
 box-sizing:border-box;
 
 }
@@ -52,11 +46,12 @@ body{
 font-family:"Inter",sans-serif;
 
 background:
+
 linear-gradient(
 180deg,
-#eef4ff 0%,
-#f7f9fc 45%,
-#ffffff 100%);
+#EEF4FF 0%,
+#F8FAFC 45%,
+#FFFFFF 100%);
 
 color:var(--dark);
 
@@ -64,7 +59,11 @@ overflow-x:hidden;
 
 min-height:100vh;
 
-padding:40px 22px;
+padding:38px 20px;
+
+text-rendering:optimizeLegibility;
+
+-webkit-font-smoothing:antialiased;
 
 }
 
@@ -76,7 +75,7 @@ position:fixed;
 
 inset:0;
 
-z-index:-5;
+z-index:-10;
 
 overflow:hidden;
 
@@ -90,7 +89,7 @@ position:absolute;
 
 left:50%;
 
-top:-220px;
+top:-240px;
 
 transform:translateX(-50%);
 
@@ -116,31 +115,29 @@ content:"";
 
 position:absolute;
 
-right:-140px;
+right:-120px;
 
-bottom:-140px;
+bottom:-120px;
 
-width:380px;
+width:360px;
 
-height:380px;
+height:360px;
 
 border-radius:50%;
 
 background:
 
 radial-gradient(circle,
-rgba(59,130,246,.12),
+rgba(59,130,246,.10),
 transparent 70%);
 
-filter:blur(70px);
+filter:blur(60px);
 
 }
 
 /*================ CONTENEDOR ================*/
 
 .container{
-
-width:100%;
 
 max-width:680px;
 
@@ -154,7 +151,9 @@ margin:auto;
 
 text-align:center;
 
-margin-bottom:45px;
+margin-bottom:40px;
+
+animation:fadeDown .8s ease;
 
 }
 
@@ -166,28 +165,34 @@ justify-content:center;
 
 align-items:center;
 
-margin-bottom:10px;
+margin-bottom:8px;
 
 }
 
 .logo{
 
-width:240px;
+display:block;
 
-max-width:80vw;
+width:250px;
+
+max-width:82vw;
 
 height:auto;
-
-display:block;
 
 object-fit:contain;
 
 filter:
 
 drop-shadow(
-0 25px 45px rgba(37,99,235,.22));
+0 24px 40px rgba(37,99,235,.20));
 
-transition:.35s;
+animation:float 6s ease-in-out infinite;
+
+transition:
+
+transform .35s,
+
+filter .35s;
 
 }
 
@@ -195,11 +200,16 @@ transition:.35s;
 
 transform:scale(1.04);
 
+filter:
+
+drop-shadow(
+0 30px 55px rgba(37,99,235,.28));
+
 }
 
 .hero h1{
 
-font-size:4rem;
+font-size:3.9rem;
 
 font-weight:800;
 
@@ -207,21 +217,32 @@ letter-spacing:-2px;
 
 line-height:1.05;
 
-margin-bottom:18px;
+margin-bottom:14px;
+
+background:
+
+linear-gradient(
+90deg,
+#111827,
+#2563EB);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
 
 }
 
 .subtitle{
 
-font-size:1.15rem;
-
-line-height:1.7;
-
-color:var(--gray);
-
 max-width:520px;
 
 margin:auto;
+
+font-size:1.08rem;
+
+line-height:1.75;
+
+color:var(--gray);
 
 }
 
@@ -235,9 +256,9 @@ flex-direction:column;
 
 gap:18px;
 
-margin-top:40px;
+margin-top:38px;
 
-margin-bottom:50px;
+margin-bottom:45px;
 
 }
 
@@ -249,7 +270,7 @@ align-items:center;
 
 justify-content:center;
 
-gap:15px;
+gap:14px;
 
 width:100%;
 
@@ -259,15 +280,11 @@ border-radius:24px;
 
 text-decoration:none;
 
-font-size:20px;
+font-size:19px;
 
 font-weight:700;
 
-color:#ffffff;
-
-opacity:1;
-
-visibility:visible;
+color:#fff;
 
 position:relative;
 
@@ -285,13 +302,46 @@ filter .30s;
 
 }
 
+.button::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:120%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+90deg,
+
+transparent,
+
+rgba(255,255,255,.25),
+
+transparent);
+
+transition:.7s;
+
+}
+
+.button:hover::before{
+
+left:120%;
+
+}
+
 .button:hover{
 
 transform:translateY(-4px);
 
 box-shadow:var(--shadow-hover);
-
-filter:brightness(1.03);
 
 }
 
@@ -303,15 +353,15 @@ transform:scale(.98);
 
 .button i{
 
-font-size:22px;
+font-size:20px;
 
-color:#ffffff;
+color:#fff;
 
 }
 
 .button span{
 
-color:#ffffff;
+color:#fff;
 
 }
 
@@ -365,634 +415,5 @@ linear-gradient(
 #833AB4,
 #E1306C,
 #FCAF45);
-
-}
-/*=========================================================
-                TARJETA PREMIUM
-=========================================================*/
-
-.card{
-
-background:rgba(255,255,255,.82);
-
-backdrop-filter:blur(20px);
-
--webkit-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.65);
-
-border-radius:30px;
-
-padding:36px;
-
-box-shadow:0 20px 60px rgba(15,23,42,.10);
-
-margin-bottom:50px;
-
-position:relative;
-
-overflow:hidden;
-
-transition:.35s;
-
-}
-
-.card:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 30px 70px rgba(15,23,42,.14);
-
-}
-
-.card::before{
-
-content:"";
-
-position:absolute;
-
-top:-140px;
-
-right:-140px;
-
-width:280px;
-
-height:280px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-
-rgba(37,99,235,.12),
-
-transparent 70%);
-
-filter:blur(40px);
-
-pointer-events:none;
-
-}
-
-.card h2{
-
-text-align:center;
-
-font-size:2rem;
-
-font-weight:800;
-
-margin-bottom:34px;
-
-letter-spacing:-1px;
-
-color:var(--dark);
-
-}
-
-/*================ FEATURES ================*/
-
-.feature{
-
-display:flex;
-
-align-items:flex-start;
-
-gap:18px;
-
-padding:18px;
-
-border-radius:20px;
-
-margin-bottom:16px;
-
-transition:.30s;
-
-}
-
-.feature:last-child{
-
-margin-bottom:0;
-
-}
-
-.feature:hover{
-
-background:rgba(37,99,235,.05);
-
-transform:translateX(6px);
-
-}
-
-.feature i{
-
-font-size:26px;
-
-min-width:30px;
-
-color:var(--primary);
-
-margin-top:2px;
-
-transition:.30s;
-
-}
-
-.feature:hover i{
-
-transform:scale(1.15);
-
-}
-
-.feature h3{
-
-font-size:1.1rem;
-
-font-weight:700;
-
-margin-bottom:6px;
-
-color:var(--dark);
-
-}
-
-.feature p{
-
-font-size:.97rem;
-
-line-height:1.75;
-
-color:var(--gray);
-
-}
-
-/*================ FOOTER ================*/
-
-footer{
-
-text-align:center;
-
-padding:25px 0 35px;
-
-}
-
-.footer-logo{
-
-width:90px;
-
-margin-bottom:16px;
-
-filter:
-
-drop-shadow(0 10px 20px rgba(37,99,235,.18));
-
-transition:.35s;
-
-}
-
-.footer-logo:hover{
-
-transform:scale(1.08);
-
-}
-
-footer p{
-
-font-size:1rem;
-
-font-weight:700;
-
-margin-bottom:8px;
-
-color:var(--dark);
-
-}
-
-footer span{
-
-display:block;
-
-font-size:.92rem;
-
-color:var(--gray);
-
-line-height:1.7;
-
-max-width:340px;
-
-margin:auto;
-
-}
-
-/*================ EFECTOS PREMIUM ================*/
-
-.button::before{
-
-content:"";
-
-position:absolute;
-
-left:-120%;
-
-top:0;
-
-width:120%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(255,255,255,.28),
-
-transparent);
-
-transition:.7s;
-
-}
-
-.button:hover::before{
-
-left:120%;
-
-}
-
-.logo{
-
-animation:float 6s ease-in-out infinite;
-
-}
-
-.card{
-
-animation:fadeUp .8s ease;
-
-}
-
-.hero{
-
-animation:fadeDown .8s ease;
-
-}
-/*=========================================================
-        PHOENIX MARKET PREMIUM+
-        PARTE 3 FINAL
-=========================================================*/
-
-/*==========================
-        ANIMACIONES
-==========================*/
-
-@keyframes fadeDown{
-
-from{
-
-opacity:0;
-
-transform:translateY(-35px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(35px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-8px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/*==========================
-        SCROLL PREMIUM
-==========================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#edf4ff;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:linear-gradient(
-180deg,
-#2563EB,
-#1D4ED8);
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#1E40AF;
-
-}
-
-/*==========================
-        SELECCIÓN
-==========================*/
-
-::selection{
-
-background:#2563EB;
-
-color:#ffffff;
-
-}
-
-/*==========================
-        EFECTOS
-==========================*/
-
-.hero h1{
-
-background:linear-gradient(
-90deg,
-#111827,
-#2563EB);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-background-clip:text;
-
-}
-
-.button{
-
-cursor:pointer;
-
-}
-
-.button:hover{
-
-filter:brightness(1.05);
-
-}
-
-.button:active{
-
-transform:scale(.97);
-
-}
-
-.logo{
-
-cursor:pointer;
-
-}
-
-.logo:hover{
-
-transform:scale(1.05);
-
-}
-
-.footer-logo{
-
-cursor:pointer;
-
-}
-
-.footer-logo:hover{
-
-transform:scale(1.08);
-
-}
-
-/*==========================
-        RESPONSIVE TABLET
-==========================*/
-
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:3rem;
-
-}
-
-.logo{
-
-width:210px;
-
-}
-
-.subtitle{
-
-font-size:1.05rem;
-
-}
-
-.button{
-
-font-size:18px;
-
-padding:20px;
-
-}
-
-.card{
-
-padding:30px;
-
-}
-
-}
-
-/*==========================
-        RESPONSIVE MÓVIL
-==========================*/
-
-@media(max-width:480px){
-
-body{
-
-padding:25px 16px;
-
-}
-
-.logo{
-
-width:180px;
-
-}
-
-.hero{
-
-margin-bottom:35px;
-
-}
-
-.hero h1{
-
-font-size:2.35rem;
-
-}
-
-.subtitle{
-
-font-size:.96rem;
-
-}
-
-.buttons{
-
-gap:15px;
-
-}
-
-.button{
-
-padding:18px;
-
-font-size:17px;
-
-border-radius:20px;
-
-}
-
-.button i{
-
-font-size:20px;
-
-}
-
-.card{
-
-padding:22px;
-
-border-radius:24px;
-
-}
-
-.card h2{
-
-font-size:1.55rem;
-
-}
-
-.feature{
-
-gap:14px;
-
-padding:14px;
-
-}
-
-.feature h3{
-
-font-size:1rem;
-
-}
-
-.feature p{
-
-font-size:.92rem;
-
-}
-
-.footer-logo{
-
-width:72px;
-
-}
-
-footer{
-
-padding-bottom:20px;
-
-}
-
-}
-
-/*==========================
-        OPTIMIZACIÓN
-==========================*/
-
-img{
-
-max-width:100%;
-
-display:block;
-
-}
-
-a{
-
--webkit-tap-highlight-color:transparent;
-
-}
-
-button{
-
-font-family:inherit;
-
-}
-
-body{
-
-text-rendering:optimizeLegibility;
-
--webkit-font-smoothing:antialiased;
-
--moz-osx-font-smoothing:grayscale;
 
 }
