@@ -1,5 +1,5 @@
 /*==================================================
-            PHOENIX MARKET - CSS RECTIFICADO
+            PHOENIX MARKET - CSS FINAL
 ==================================================*/
 
 :root {
@@ -33,6 +33,355 @@ body {
   padding: 20px;
   position: relative;
   overflow-x: hidden;
+}
+
+/* Fondo difuminado decorativo */
+.background-blur {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.20) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/*==================================================
+        HEADER / HERO (Logo Superior Animado)
+==================================================*/
+
+.hero {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* LOGO SUPERIOR: Tamaño ampliado + Animación de flotación */
+.hero-logo img {
+  width: 135px;
+  height: auto;
+  display: block;
+  animation: floatLogo 3.8s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.25));
+}
+
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0px);
+    filter: drop-shadow(0 8px 16px rgba(37, 99, 235, 0.20));
+  }
+  50% {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 16px 26px rgba(37, 99, 235, 0.35));
+  }
+  100% {
+    transform: translateY(0px);
+    filter: drop-shadow(0 8px 16px rgba(37, 99, 235, 0.20));
+  }
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.hero h1 .dark {
+  color: var(--oscuro);
+}
+
+.hero h1 .blue {
+  color: var(--azul);
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  color: var(--gris);
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+/*==================================================
+              ALIADOS ESTRATÉGICOS
+==================================================*/
+
+.partners {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.partners h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--oscuro);
+  margin-bottom: 6px;
+}
+
+.partners-description {
+  font-size: 0.85rem;
+  color: var(--gris);
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.partners-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.partners-track img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+  
+  /* CORRECCIÓN DE FONDO: Fusión de color para quitar fondos claros/cuadros */
+  mix-blend-mode: multiply;
+}
+
+.partners-track img:hover {
+  opacity: 1;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/*==================================================
+              BOTONES PRINCIPALES
+==================================================*/
+
+.buttons {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 56px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--blanco);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+/* Colores de los Botones */
+.button.primary {
+  background-color: #1d4ed8;
+}
+
+.button.dark {
+  background-color: #0f172a;
+}
+
+.button.whatsapp {
+  background-color: #16a34a;
+}
+
+.button.instagram {
+  background: linear-gradient(90deg, #c13584 0%, #e1306c 40%, #f77737 80%, #fcaf45 100%);
+}
+
+.button i {
+  font-size: 1.2rem;
+}
+
+/* Reflejo táctil en los botones */
+.button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.button:active::after {
+  left: 130%;
+}
+
+/*==================================================
+        TARJETA DE CARACTERÍSTICAS (Con Reflejo)
+==================================================*/
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  background: var(--blanco);
+  padding: 30px 24px;
+  border-radius: 28px;
+  box-shadow: var(--sombra);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de destello / reflejo diagonal */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.6s ease;
+  pointer-events: none;
+}
+
+.card:hover,
+.card:active {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.10);
+}
+
+.card:hover::before,
+.card:active::before {
+  left: 140%;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--oscuro);
+  text-align: center;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.feature:last-child {
+  margin-bottom: 0;
+}
+
+.feature i {
+  font-size: 1.4rem;
+  color: var(--azul);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.feature h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--oscuro);
+  margin-bottom: 3px;
+}
+
+.feature p {
+  font-size: 0.85rem;
+  color: var(--gris);
+  line-height: 1.5;
+}
+
+/*==================================================
+        FOOTER (Logo Inferior Pequeño Controlado)
+==================================================*/
+
+footer {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px 10px 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 54px !important;
+  max-width: 54px;
+  height: auto;
+  margin-bottom: 12px;
+  opacity: 0.9;
+  display: block;
+}
+
+footer p {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--oscuro);
+  margin-bottom: 4px;
+}
+
+footer span {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  max-width: 300px;
+  line-height: 1.4;
+  display: block;
+}
+
+/*==================================================
+                SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--azul);
+  border-radius: 10px;
 }
 
 /* Fondo difuminado decorativo */
