@@ -471,3 +471,303 @@ line-height:1.7;
 color:#6b7280;
 
 }
+/*==================================================
+                    FOOTER
+==================================================*/
+
+footer{
+
+max-width:760px;
+
+margin:0 auto;
+
+padding:10px 22px 50px;
+
+text-align:center;
+
+}
+
+.footer-logo{
+
+width:58px;
+
+height:auto;
+
+margin:0 auto 16px;
+
+display:block;
+
+opacity:.95;
+
+}
+
+footer p{
+
+font-size:1rem;
+
+font-weight:700;
+
+color:#111827;
+
+margin-bottom:8px;
+
+}
+
+footer span{
+
+display:block;
+
+max-width:500px;
+
+margin:auto;
+
+font-size:.94rem;
+
+line-height:1.7;
+
+color:#6B7280;
+
+}
+
+/*==================================================
+                EFECTOS
+==================================================*/
+
+.action-btn,
+.hero-logo img,
+.partners-track img,
+.why-card{
+
+transition:.35s;
+
+}
+
+.partners-track img{
+
+filter:drop-shadow(
+0 6px 14px rgba(0,0,0,.08));
+
+}
+
+.why-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 28px 60px rgba(15,23,42,.14);
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+.hero{
+
+padding-top:40px;
+
+}
+
+.hero-logo img{
+
+width:110px;
+
+}
+
+.hero h1{
+
+font-size:2.8rem;
+
+}
+
+.hero-subtitle{
+
+font-size:1rem;
+
+}
+
+.partners-track{
+
+gap:38px;
+
+}
+
+.partners-track img{
+
+height:40px;
+
+}
+
+.action-btn{
+
+height:66px;
+
+font-size:1.12rem;
+
+}
+
+.why-card{
+
+padding:30px 24px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+body{
+
+overflow-x:hidden;
+
+}
+
+.hero{
+
+padding:35px 18px 25px;
+
+}
+
+.hero-logo img{
+
+width:95px;
+
+}
+
+.hero h1{
+
+font-size:2.25rem;
+
+}
+
+.hero-subtitle{
+
+font-size:.95rem;
+
+}
+
+.partners{
+
+margin:30px auto;
+
+}
+
+.partners h2{
+
+font-size:1.6rem;
+
+}
+
+.partners-description{
+
+font-size:.92rem;
+
+padding:0 14px;
+
+}
+
+.partners-track{
+
+gap:30px;
+
+}
+
+.partners-track img{
+
+height:34px;
+
+}
+
+.actions{
+
+padding:0 16px;
+
+}
+
+.action-btn{
+
+height:62px;
+
+font-size:1rem;
+
+border-radius:18px;
+
+}
+
+.action-btn i{
+
+font-size:1.25rem;
+
+}
+
+.why{
+
+padding:0 16px;
+
+}
+
+.why-card{
+
+border-radius:24px;
+
+padding:24px 20px;
+
+}
+
+.why-card h2{
+
+font-size:1.6rem;
+
+}
+
+.why-icon{
+
+width:48px;
+
+height:48px;
+
+font-size:1.1rem;
+
+}
+
+.footer-logo{
+
+width:52px;
+
+}
+
+footer{
+
+padding-bottom:30px;
+
+}
+
+}
+
+/*==================================================
+                SCROLL
+==================================================*/
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#2563EB;
+
+border-radius:20px;
+
+}
+
+::selection{
+
+background:#2563EB;
+
+color:#fff;
+
+}
