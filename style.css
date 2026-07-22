@@ -1,16 +1,15 @@
 /*==================================================
-            PHOENIX MARKET - CSS FINAL
+            PHOENIX MARKET - CSS RECTIFICADO
 ==================================================*/
 
 :root {
   --azul: #2563eb;
-  --azul2: #1d4ed8;
-  --oscuro: #111827;
-  --gris: #6b7280;
+  --azul-hover: #1d4ed8;
+  --oscuro: #0f172a;
+  --gris: #64748b;
   --blanco: #ffffff;
-  --fondo: #eef4ff;
-  --radio: 28px;
-  --sombra: 0 18px 45px rgba(15, 23, 42, .10);
+  --fondo: #f4f7fc;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 * {
@@ -25,60 +24,82 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #eef4ff 0%, #f7f9ff 45%, #ffffff 100%);
+  background-color: var(--fondo);
   color: var(--oscuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
   overflow-x: hidden;
 }
 
-/*================ HERO (LOGO SUPERIOR ANIMADO) =================*/
+/* Fondo difuminado decorativo */
+.background-blur {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.20) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/*==================================================
+        HEADER / HERO (Logo Superior Animado)
+==================================================*/
 
 .hero {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 50px 22px 30px;
   text-align: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .hero-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-/* Tamaño mejorado y animación resaltada para el logo superior */
+/* LOGO SUPERIOR: Tamaño ampliado + Animación de flotación */
 .hero-logo img {
-  width: 140px; /* Tamaño con más presencia */
+  width: 135px; /* Tamaño con buena presencia */
   height: auto;
   display: block;
-  animation: floatLogo 3.5s ease-in-out infinite;
-  filter: drop-shadow(0 12px 25px rgba(37, 99, 235, .30));
+  animation: floatLogo 3.8s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.25));
 }
 
 @keyframes floatLogo {
   0% {
-    transform: translateY(0px) scale(1);
-    filter: drop-shadow(0 8px 18px rgba(37, 99, 235, .25));
+    transform: translateY(0px);
+    filter: drop-shadow(0 8px 16px rgba(37, 99, 235, 0.20));
   }
   50% {
-    transform: translateY(-10px) scale(1.03); /* Eleva y da presencia */
-    filter: drop-shadow(0 18px 30px rgba(37, 99, 235, .45)); /* Brillo resaltado */
+    transform: translateY(-8px);
+    filter: drop-shadow(0 16px 26px rgba(37, 99, 235, 0.35));
   }
   100% {
-    transform: translateY(0px) scale(1);
-    filter: drop-shadow(0 8px 18px rgba(37, 99, 235, .25));
+    transform: translateY(0px);
+    filter: drop-shadow(0 8px 16px rgba(37, 99, 235, 0.20));
   }
 }
 
 .hero h1 {
-  font-size: 3.3rem;
+  font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 14px;
+  letter-spacing: -0.5px;
 }
 
 .hero h1 .dark {
-  color: #0f172a;
+  color: var(--oscuro);
 }
 
 .hero h1 .blue {
@@ -86,160 +107,203 @@ body {
 }
 
 .hero-subtitle {
-  max-width: 560px;
-  margin: auto;
-  font-size: 1.08rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
   color: var(--gris);
+  margin-top: 8px;
+  font-weight: 400;
 }
 
-/*================ ALIADOS COMERCIALES =================*/
+/*==================================================
+              ALIADOS ESTRATÉGICOS
+==================================================*/
 
 .partners {
-  max-width: 920px;
-  margin: 40px auto;
+  width: 100%;
+  max-width: 500px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .partners h2 {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 800;
-  margin-bottom: 12px;
+  color: var(--oscuro);
+  margin-bottom: 6px;
 }
 
 .partners-description {
-  max-width: 650px;
-  margin: 0 auto 28px;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 0.85rem;
   color: var(--gris);
+  margin-bottom: 18px;
+  line-height: 1.5;
 }
-
-/*================ CINTA / MARQUEE =================*/
 
 .partners-marquee {
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 15px 0;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  padding: 10px 0;
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
 }
 
 .partners-track {
   display: flex;
   align-items: center;
-  gap: 55px;
+  gap: 35px;
   width: max-content;
-  animation: marquee 26s linear infinite;
+  animation: marquee 22s linear infinite;
 }
 
 .partners-track img {
-  height: 46px;
+  height: 28px;
   width: auto;
   object-fit: contain;
-  transition: .35s;
-  opacity: .90;
+  opacity: 0.85;
+  transition: opacity 0.3s;
 }
 
 .partners-track img:hover {
-  transform: scale(1.12);
   opacity: 1;
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /*==================================================
-                BOTONES PRINCIPALES (Sincronizado con HTML)
+              BOTONES PRINCIPALES
 ==================================================*/
 
 .buttons {
-  max-width: 760px;
-  margin: 35px auto 45px;
-  padding: 0 22px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
+  margin-bottom: 35px;
 }
 
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  height: 68px;
-  border-radius: 22px;
+  gap: 10px;
+  height: 56px;
+  border-radius: 50px; /* Estilo píldora original */
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #fff;
-  transition: .30s;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+  color: var(--blanco);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .18);
+.button:active {
+  transform: scale(0.97);
 }
 
+/* Colores de los Botones */
 .button.primary {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  background-color: #1d4ed8;
 }
 
 .button.dark {
-  background: linear-gradient(135deg, #1f2937, #111827);
+  background-color: #0f172a;
 }
 
 .button.whatsapp {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
+  background-color: #16a34a;
 }
 
 .button.instagram {
-  background: linear-gradient(135deg, #8b5cf6, #ec4899, #f59e0b);
+  background: linear-gradient(90deg, #c13584 0%, #e1306c 40%, #f77737 80%, #fcaf45 100%);
 }
 
 .button i {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+/* Reflejo táctil en los botones */
+.button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.button:active::after {
+  left: 130%;
 }
 
 /*==================================================
-              ¿POR QUÉ ELEGIRNOS? (Sincronizado con HTML)
+        TARJETA DE CARACTERÍSTICAS (Con Reflejo)
 ==================================================*/
 
 .card {
-  max-width: 760px;
-  margin: 0 auto 60px;
-  padding: 38px 30px;
-  background: #fff;
-  border-radius: 32px;
+  width: 100%;
+  max-width: 500px;
+  background: var(--blanco);
+  padding: 30px 24px;
+  border-radius: 28px;
   box-shadow: var(--sombra);
-  transition: .35s;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 60px rgba(15, 23, 42, .14);
+/* Efecto de destello / reflejo diagonal */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.6s ease;
+  pointer-events: none;
+}
+
+.card:hover,
+.card:active {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.10);
+}
+
+.card:hover::before,
+.card:active::before {
+  left: 140%; /* Pasa la luz al tocar o pasar el mouse */
 }
 
 .card h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 1.25rem;
   font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--oscuro);
+  text-align: center;
 }
 
 .feature {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
-  margin-bottom: 24px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .feature:last-child {
@@ -247,176 +311,62 @@ body {
 }
 
 .feature i {
-  width: 50px;
-  height: 50px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--azul); /* Íconos limpios en azul original */
   flex-shrink: 0;
-  color: #fff;
-  font-size: 1.3rem;
-  box-shadow: 0 10px 22px rgba(37, 99, 235, .25);
+  margin-top: 3px;
 }
 
 .feature h3 {
-  font-size: 1.15rem;
-  margin-bottom: 4px;
+  font-size: 1rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--oscuro);
+  margin-bottom: 3px;
 }
 
 .feature p {
-  font-size: .98rem;
-  line-height: 1.7;
-  color: #6b7280;
+  font-size: 0.85rem;
+  color: var(--gris);
+  line-height: 1.5;
 }
 
 /*==================================================
-                    FOOTER (LOGO INFERIOR PEQUEÑO FIXED)
+        FOOTER (Logo Inferior Pequeño Controlado)
 ==================================================*/
 
 footer {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 10px 22px 50px;
+  width: 100%;
+  max-width: 500px;
   text-align: center;
+  padding: 10px 10px 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* TAMAÑO CONTROLADO PARA EL LOGO INFERIOR */
 .footer-logo {
-  width: 58px !important; /* Mantiene el tamaño controlado exacto */
-  max-width: 58px;
+  width: 54px !important;
+  max-width: 54px;
   height: auto;
-  margin: 0 auto 16px;
+  margin-bottom: 12px;
+  opacity: 0.9;
   display: block;
-  opacity: .95;
 }
 
 footer p {
-  font-size: 1rem;
   font-weight: 700;
-  color: #111827;
-  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--oscuro);
+  margin-bottom: 4px;
 }
 
 footer span {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  max-width: 300px;
+  line-height: 1.4;
   display: block;
-  max-width: 500px;
-  margin: auto;
-  font-size: .94rem;
-  line-height: 1.7;
-  color: #6B7280;
-}
-
-/*==================================================
-                EFECTOS
-==================================================*/
-
-.button,
-.hero-logo img,
-.partners-track img,
-.card {
-  transition: .35s;
-}
-
-.partners-track img {
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .08));
-}
-
-/*==================================================
-                RESPONSIVE
-==================================================*/
-
-@media(max-width: 768px) {
-  .hero {
-    padding-top: 40px;
-  }
-  .hero-logo img {
-    width: 120px;
-  }
-  .hero h1 {
-    font-size: 2.8rem;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  .partners-track {
-    gap: 38px;
-  }
-  .partners-track img {
-    height: 40px;
-  }
-  .button {
-    height: 64px;
-    font-size: 1.12rem;
-  }
-  .card {
-    padding: 30px 24px;
-  }
-}
-
-@media(max-width: 480px) {
-  body {
-    overflow-x: hidden;
-  }
-  .hero {
-    padding: 35px 18px 25px;
-  }
-  .hero-logo img {
-    width: 105px;
-  }
-  .hero h1 {
-    font-size: 2.25rem;
-  }
-  .hero-subtitle {
-    font-size: .95rem;
-  }
-  .partners {
-    margin: 30px auto;
-  }
-  .partners h2 {
-    font-size: 1.6rem;
-  }
-  .partners-description {
-    font-size: .92rem;
-    padding: 0 14px;
-  }
-  .partners-track {
-    gap: 30px;
-  }
-  .partners-track img {
-    height: 34px;
-  }
-  .buttons {
-    padding: 0 16px;
-  }
-  .button {
-    height: 60px;
-    font-size: 1rem;
-    border-radius: 18px;
-  }
-  .button i {
-    font-size: 1.25rem;
-  }
-  .card {
-    border-radius: 24px;
-    padding: 24px 20px;
-  }
-  .card h2 {
-    font-size: 1.6rem;
-  }
-  .feature i {
-    width: 44px;
-    height: 44px;
-    font-size: 1.1rem;
-  }
-  .footer-logo {
-    width: 50px !important;
-  }
-  footer {
-    padding-bottom: 30px;
-  }
 }
 
 /*==================================================
@@ -424,15 +374,10 @@ footer span {
 ==================================================*/
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2563EB;
-  border-radius: 20px;
-}
-
-::selection {
-  background: #2563EB;
-  color: #fff;
+  background: var(--azul);
+  border-radius: 10px;
 }
