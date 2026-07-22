@@ -273,3 +273,136 @@ footer small{
     animation:fadeUp .8s ease;
 
 }
+/*=========================
+    EFECTOS PREMIUM
+=========================*/
+
+.btn i{
+
+    font-size:20px;
+
+}
+
+.btn span{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.btn:active{
+
+    transform:scale(.98);
+
+}
+
+.hero h1{
+
+    text-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*=========================
+      RESPONSIVE
+=========================*/
+
+@media (max-width:600px){
+
+body{
+
+padding:25px 16px;
+
+}
+
+.logo{
+
+width:155px;
+
+height:155px;
+
+}
+
+.hero h1{
+
+font-size:2.2rem;
+
+}
+
+.slogan{
+
+font-size:.95rem;
+
+}
+
+.btn{
+
+padding:16px;
+
+font-size:16px;
+
+}
+
+.trust{
+
+padding:24px;
+
+}
+
+.trust h2{
+
+font-size:1.25rem;
+
+}
+
+}
+
+/*=========================
+      TRANSICIONES
+=========================*/
+
+*{
+
+scroll-behavior:smooth;
+
+}
+
+.btn,
+.logo,
+.trust{
+
+transition:all .35s ease;
+
+}
+
+/*=========================
+        FIN
+=========================*/
