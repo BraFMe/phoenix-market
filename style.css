@@ -1,7 +1,7 @@
 /*=========================================================
-            PHOENIX MARKET 10.0
-                STYLE.CSS
-                PARTE 1
+                PHOENIX MARKET 10.1
+                    STYLE.CSS
+                    PARTE 1
 =========================================================*/
 
 /*================ VARIABLES ================*/
@@ -18,12 +18,6 @@
 --white:#ffffff;
 
 --bg:#EEF4FF;
-
---glass:
-rgba(255,255,255,.72);
-
---glass-border:
-rgba(255,255,255,.55);
 
 --radius:30px;
 
@@ -58,11 +52,10 @@ body{
 font-family:"Inter",sans-serif;
 
 background:
-
 linear-gradient(
 180deg,
 #eef4ff 0%,
-#f6f8fd 45%,
+#f7f9fc 45%,
 #ffffff 100%);
 
 color:var(--dark);
@@ -103,25 +96,23 @@ position:absolute;
 
 left:50%;
 
-top:-240px;
+top:-220px;
 
 transform:translateX(-50%);
 
-width:720px;
+width:700px;
 
-height:720px;
+height:700px;
 
 border-radius:50%;
 
 background:
 
 radial-gradient(circle,
-
 rgba(37,99,235,.18),
-
 transparent 70%);
 
-filter:blur(75px);
+filter:blur(70px);
 
 }
 
@@ -144,9 +135,7 @@ border-radius:50%;
 background:
 
 radial-gradient(circle,
-
 rgba(37,99,235,.12),
-
 transparent 70%);
 
 filter:blur(70px);
@@ -171,7 +160,7 @@ margin:auto;
 
 text-align:center;
 
-margin-bottom:45px;
+margin-bottom:40px;
 
 animation:fadeDown .8s ease;
 
@@ -185,15 +174,15 @@ justify-content:center;
 
 align-items:center;
 
-margin-bottom:15px;
+margin-bottom:14px;
 
 }
 
 .logo{
 
-width:230px;
+width:220px;
 
-max-width:82vw;
+max-width:80vw;
 
 height:auto;
 
@@ -204,12 +193,9 @@ object-fit:contain;
 filter:
 
 drop-shadow(
-
-0 20px 45px rgba(37,99,235,.20));
+0 18px 40px rgba(37,99,235,.18));
 
 transition:.35s;
-
-animation:none;
 
 }
 
@@ -229,16 +215,12 @@ letter-spacing:-2px;
 
 line-height:1.05;
 
-margin-bottom:16px;
+margin-bottom:18px;
 
 background:
-
 linear-gradient(
-
 90deg,
-
 #111827,
-
 #2563EB);
 
 -webkit-background-clip:text;
@@ -260,773 +242,5 @@ color:var(--gray);
 max-width:560px;
 
 margin:auto;
-
-}
-/*=========================================================
-        ALIADOS ESTRATÉGICOS
-=========================================================*/
-
-.partners-section{
-
-margin:10px 0 45px;
-
-padding:28px 22px;
-
-border-radius:28px;
-
-background:rgba(255,255,255,.68);
-
-backdrop-filter:blur(18px);
-
--webkit-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.55);
-
-box-shadow:0 20px 55px rgba(15,23,42,.08);
-
-overflow:hidden;
-
-position:relative;
-
-}
-
-.partners-section::before{
-
-content:"";
-
-position:absolute;
-
-top:-120px;
-
-right:-120px;
-
-width:240px;
-
-height:240px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-
-rgba(37,99,235,.10),
-
-transparent 70%);
-
-filter:blur(35px);
-
-pointer-events:none;
-
-}
-
-.partners-section h2{
-
-text-align:center;
-
-font-size:1.8rem;
-
-font-weight:800;
-
-margin-bottom:12px;
-
-letter-spacing:-.8px;
-
-color:#111827;
-
-}
-
-.partners-section p{
-
-text-align:center;
-
-max-width:560px;
-
-margin:auto;
-
-font-size:.98rem;
-
-line-height:1.8;
-
-color:#6B7280;
-
-margin-bottom:28px;
-
-}
-
-/*==========================
-      CINTA INFINITA
-==========================*/
-
-.partners-slider{
-
-width:100%;
-
-overflow:hidden;
-
-position:relative;
-
-mask-image:linear-gradient(
-
-to right,
-
-transparent,
-
-#000 8%,
-
-#000 92%,
-
-transparent);
-
--webkit-mask-image:linear-gradient(
-
-to right,
-
-transparent,
-
-#000 8%,
-
-#000 92%,
-
-transparent);
-
-}
-
-.partners-track{
-
-display:flex;
-
-align-items:center;
-
-gap:26px;
-
-width:max-content;
-
-animation:partnersMove 34s linear infinite;
-
-}
-
-.partners-slider:hover .partners-track{
-
-animation-play-state:paused;
-
-}
-
-/*==========================
-      TARJETAS
-==========================*/
-
-.partner{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-min-width:170px;
-
-height:86px;
-
-padding:14px 22px;
-
-border-radius:22px;
-
-background:rgba(255,255,255,.80);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,.60);
-
-box-shadow:
-
-0 10px 25px rgba(15,23,42,.08);
-
-transition:.35s;
-
-}
-
-.partner:hover{
-
-transform:translateY(-5px);
-
-box-shadow:
-
-0 18px 35px rgba(15,23,42,.12);
-
-}
-
-.partner img{
-
-max-height:42px;
-
-max-width:130px;
-
-width:auto;
-
-height:auto;
-
-object-fit:contain;
-
-transition:.35s;
-
-filter:none;
-
-}
-
-.partner:hover img{
-
-transform:scale(1.08);
-
-}
-
-@keyframes partnersMove{
-
-0%{
-
-transform:translateX(0);
-
-}
-
-100%{
-
-transform:translateX(-50%);
-
-}
-
-}
-/*=========================================================
-        BOTONES PREMIUM
-=========================================================*/
-
-.buttons{
-
-display:flex;
-
-flex-direction:column;
-
-gap:18px;
-
-margin:45px 0 50px;
-
-}
-
-.button{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:15px;
-
-padding:22px;
-
-border-radius:24px;
-
-text-decoration:none;
-
-font-size:20px;
-
-font-weight:700;
-
-color:#fff;
-
-box-shadow:var(--shadow);
-
-transition:.35s;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.button::before{
-
-content:"";
-
-position:absolute;
-
-left:-120%;
-
-top:0;
-
-width:120%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(255,255,255,.28),
-
-transparent);
-
-transition:.8s;
-
-}
-
-.button:hover::before{
-
-left:120%;
-
-}
-
-.button:hover{
-
-transform:translateY(-5px);
-
-box-shadow:var(--shadow-hover);
-
-}
-
-.button:active{
-
-transform:scale(.98);
-
-}
-
-.button i{
-
-font-size:22px;
-
-color:#fff;
-
-}
-
-.primary{
-
-background:linear-gradient(135deg,#2563EB,#1D4ED8);
-
-}
-
-.dark{
-
-background:#111827;
-
-}
-
-.whatsapp{
-
-background:linear-gradient(135deg,#25D366,#16A34A);
-
-}
-
-.instagram{
-
-background:linear-gradient(135deg,#833AB4,#E1306C,#FCAF45);
-
-}
-
-/*=========================================================
-                TARJETA
-=========================================================*/
-
-.card{
-
-background:rgba(255,255,255,.80);
-
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.60);
-
-border-radius:30px;
-
-padding:34px;
-
-box-shadow:0 18px 50px rgba(15,23,42,.10);
-
-margin-bottom:45px;
-
-animation:fadeUp .8s ease;
-
-}
-
-.card h2{
-
-text-align:center;
-
-font-size:2rem;
-
-margin-bottom:30px;
-
-font-weight:800;
-
-}
-
-.feature{
-
-display:flex;
-
-gap:18px;
-
-padding:16px;
-
-border-radius:20px;
-
-transition:.30s;
-
-margin-bottom:12px;
-
-}
-
-.feature:last-child{
-
-margin-bottom:0;
-
-}
-
-.feature:hover{
-
-background:rgba(37,99,235,.05);
-
-transform:translateX(5px);
-
-}
-
-.feature i{
-
-font-size:26px;
-
-min-width:30px;
-
-color:#2563EB;
-
-margin-top:3px;
-
-}
-
-.feature h3{
-
-margin-bottom:5px;
-
-font-size:1.08rem;
-
-}
-
-.feature p{
-
-color:#6B7280;
-
-line-height:1.75;
-
-}
-
-/*=========================================================
-                FOOTER
-=========================================================*/
-
-footer{
-
-text-align:center;
-
-padding:20px 0 30px;
-
-}
-
-.footer-logo{
-
-width:80px;
-
-margin:auto;
-
-margin-bottom:15px;
-
-display:block;
-
-filter:drop-shadow(0 10px 20px rgba(37,99,235,.18));
-
-}
-
-footer p{
-
-font-size:1rem;
-
-font-weight:700;
-
-margin-bottom:8px;
-
-}
-
-footer span{
-
-display:block;
-
-max-width:420px;
-
-margin:auto;
-
-color:#6B7280;
-
-line-height:1.7;
-
-font-size:.95rem;
-
-}
-
-/*=========================================================
-        BOTÓN VOLVER ARRIBA
-=========================================================*/
-
-.back-to-top{
-
-position:fixed;
-
-right:22px;
-
-bottom:22px;
-
-width:52px;
-
-height:52px;
-
-border-radius:50%;
-
-background:#2563EB;
-
-color:#fff;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-decoration:none;
-
-font-size:20px;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.35s;
-
-box-shadow:0 15px 35px rgba(37,99,235,.30);
-
-z-index:999;
-
-}
-
-.back-to-top.show{
-
-opacity:1;
-
-visibility:visible;
-
-}
-
-.back-to-top:hover{
-
-transform:translateY(-4px);
-
-}
-
-/*=========================================================
-                ANIMACIONES
-=========================================================*/
-
-@keyframes fadeDown{
-
-from{
-
-opacity:0;
-
-transform:translateY(-35px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(35px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-/*=========================================================
-                RESPONSIVE
-=========================================================*/
-
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:3rem;
-
-}
-
-.logo{
-
-width:200px;
-
-}
-
-.partner{
-
-min-width:145px;
-
-height:74px;
-
-}
-
-.partner img{
-
-max-height:34px;
-
-}
-
-.button{
-
-font-size:18px;
-
-padding:20px;
-
-}
-
-.card{
-
-padding:26px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-body{
-
-padding:25px 16px;
-
-}
-
-.hero h1{
-
-font-size:2.4rem;
-
-}
-
-.logo{
-
-width:170px;
-
-}
-
-.subtitle{
-
-font-size:.95rem;
-
-}
-
-.partners-section{
-
-padding:22px 16px;
-
-}
-
-.partners-section h2{
-
-font-size:1.45rem;
-
-}
-
-.partners-section p{
-
-font-size:.90rem;
-
-}
-
-.partner{
-
-min-width:130px;
-
-height:68px;
-
-padding:12px 18px;
-
-}
-
-.partner img{
-
-max-height:30px;
-
-max-width:95px;
-
-}
-
-.button{
-
-padding:18px;
-
-font-size:17px;
-
-}
-
-.card{
-
-padding:22px;
-
-}
-
-.footer-logo{
-
-width:70px;
-
-}
-
-}
-
-/*=========================================================
-                SCROLL
-=========================================================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#2563EB;
-
-border-radius:20px;
-
-}
-
-::selection{
-
-background:#2563EB;
-
-color:#fff;
 
 }
