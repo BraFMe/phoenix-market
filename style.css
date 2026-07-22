@@ -1,31 +1,22 @@
-/*=========================================================
-                PHOENIX MARKET
-                STYLE.CSS
-                PARTE 1
-=========================================================*/
-
-/*================ VARIABLES ================*/
+/*==================================================
+            PHOENIX MARKET - CSS FINAL
+==================================================*/
 
 :root{
 
---primary:#2563EB;
---primary-dark:#1D4ED8;
---dark:#111827;
---gray:#6B7280;
---white:#FFFFFF;
---background:#EEF4FF;
+--azul:#2563eb;
+--azul2:#1d4ed8;
+--oscuro:#111827;
+--gris:#6b7280;
+--blanco:#ffffff;
+--fondo:#eef4ff;
 
---radius:28px;
+--radio:28px;
 
---shadow:
-0 20px 50px rgba(15,23,42,.12);
-
---shadow-hover:
-0 28px 70px rgba(15,23,42,.18);
+--sombra:
+0 18px 45px rgba(15,23,42,.10);
 
 }
-
-/*================ RESET ================*/
 
 *{
 
@@ -43,107 +34,31 @@ scroll-behavior:smooth;
 
 body{
 
-font-family:"Poppins",sans-serif;
+font-family:'Poppins',sans-serif;
 
-background:
-linear-gradient(
+background:linear-gradient(
 180deg,
-#EEF4FF 0%,
-#F8FAFC 45%,
-#FFFFFF 100%);
+#eef4ff 0%,
+#f7f9ff 45%,
+#ffffff 100%);
 
-color:var(--dark);
+color:var(--oscuro);
 
 overflow-x:hidden;
 
-min-height:100vh;
-
-padding:40px 22px;
-
--webkit-font-smoothing:antialiased;
--moz-osx-font-smoothing:grayscale;
-
 }
 
-/*================ FONDO ================*/
-
-.background-blur{
-
-position:fixed;
-
-inset:0;
-
-z-index:-10;
-
-overflow:hidden;
-
-}
-
-.background-blur::before{
-
-content:"";
-
-position:absolute;
-
-left:50%;
-
-top:-220px;
-
-transform:translateX(-50%);
-
-width:720px;
-
-height:720px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-rgba(37,99,235,.18),
-transparent 70%);
-
-filter:blur(75px);
-
-}
-
-.background-blur::after{
-
-content:"";
-
-position:absolute;
-
-right:-180px;
-
-bottom:-180px;
-
-width:420px;
-
-height:420px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-rgba(37,99,235,.10),
-transparent 70%);
-
-filter:blur(75px);
-
-}
-
-/*================ HERO ================*/
+/*================ HERO =================*/
 
 .hero{
 
 max-width:760px;
 
-margin:auto;
+margin:0 auto;
+
+padding:50px 22px 30px;
 
 text-align:center;
-
-padding-bottom:40px;
 
 }
 
@@ -161,52 +76,62 @@ margin-bottom:18px;
 
 .hero-logo img{
 
-width:230px;
-
-max-width:80vw;
+width:125px;
 
 height:auto;
 
 display:block;
 
-filter:
+animation:floatLogo 4s ease-in-out infinite;
 
-drop-shadow(
-0 20px 40px rgba(37,99,235,.20));
-
-transition:.35s;
+filter:drop-shadow(
+0 12px 25px rgba(37,99,235,.20));
 
 }
 
-.hero-logo img:hover{
+@keyframes floatLogo{
 
-transform:scale(1.04);
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
 
 }
 
 .hero h1{
 
-font-size:4rem;
+font-size:3.3rem;
 
 font-weight:800;
 
-letter-spacing:-2px;
+line-height:1.1;
 
-margin-bottom:18px;
-
-line-height:1.05;
+margin-bottom:14px;
 
 }
 
 .hero h1 .dark{
 
-color:#111827;
+color:#0f172a;
 
 }
 
 .hero h1 .blue{
 
-color:#2563EB;
+color:var(--azul);
 
 }
 
@@ -216,22 +141,21 @@ max-width:560px;
 
 margin:auto;
 
-font-size:1.12rem;
+font-size:1.08rem;
 
 line-height:1.8;
 
-color:#6B7280;
+color:var(--gris);
 
 }
-/*=========================================================
-            ALIADOS COMERCIALES
-=========================================================*/
+
+/*================ ALIADOS =================*/
 
 .partners{
 
-max-width:900px;
+max-width:920px;
 
-margin:0 auto 50px;
+margin:40px auto;
 
 text-align:center;
 
@@ -245,13 +169,11 @@ font-weight:800;
 
 margin-bottom:12px;
 
-color:var(--dark);
-
 }
 
 .partners-description{
 
-max-width:620px;
+max-width:650px;
 
 margin:0 auto 28px;
 
@@ -259,7 +181,7 @@ font-size:1rem;
 
 line-height:1.8;
 
-color:var(--gray);
+color:var(--gris);
 
 }
 
@@ -267,26 +189,26 @@ color:var(--gray);
 
 .partners-marquee{
 
-position:relative;
+width:100%;
 
 overflow:hidden;
 
-width:100%;
+position:relative;
 
-padding:18px 0;
+padding:15px 0;
 
 mask-image:linear-gradient(
 90deg,
 transparent,
-#000 10%,
-#000 90%,
+#000 8%,
+#000 92%,
 transparent);
 
 -webkit-mask-image:linear-gradient(
 90deg,
 transparent,
-#000 10%,
-#000 90%,
+#000 8%,
+#000 92%,
 transparent);
 
 }
@@ -297,7 +219,7 @@ display:flex;
 
 align-items:center;
 
-gap:60px;
+gap:55px;
 
 width:max-content;
 
@@ -305,35 +227,25 @@ animation:marquee 26s linear infinite;
 
 }
 
-.partners-marquee:hover .partners-track{
-
-animation-play-state:paused;
-
-}
-
 .partners-track img{
 
-height:44px;
+height:46px;
 
 width:auto;
 
 object-fit:contain;
 
-opacity:.82;
-
 transition:.35s;
 
-filter:grayscale(8%);
+opacity:.90;
 
 }
 
 .partners-track img:hover{
 
+transform:scale(1.12);
+
 opacity:1;
-
-transform:scale(1.08);
-
-filter:none;
 
 }
 
@@ -350,474 +262,5 @@ transform:translateX(0);
 transform:translateX(-50%);
 
 }
-
-}
-
-/*=========================================================
-                BOTONES
-=========================================================*/
-
-.buttons{
-
-max-width:680px;
-
-margin:45px auto;
-
-display:flex;
-
-flex-direction:column;
-
-gap:18px;
-
-}
-
-.button{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:15px;
-
-padding:22px;
-
-border-radius:24px;
-
-text-decoration:none;
-
-font-size:20px;
-
-font-weight:700;
-
-color:#fff;
-
-position:relative;
-
-overflow:hidden;
-
-box-shadow:var(--shadow);
-
-transition:.35s;
-
-}
-
-.button::before{
-
-content:"";
-
-position:absolute;
-
-left:-120%;
-
-top:0;
-
-width:120%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.28),
-transparent);
-
-transition:.8s;
-
-}
-
-.button:hover::before{
-
-left:120%;
-
-}
-
-.button:hover{
-
-transform:translateY(-4px);
-
-box-shadow:var(--shadow-hover);
-
-}
-
-.button:active{
-
-transform:scale(.98);
-
-}
-
-.button i{
-
-font-size:22px;
-
-color:#fff;
-
-}
-
-.primary{
-
-background:linear-gradient(
-135deg,
-#2563EB,
-#1D4ED8);
-
-}
-
-.dark{
-
-background:#111827;
-
-}
-
-.whatsapp{
-
-background:linear-gradient(
-135deg,
-#25D366,
-#16A34A);
-
-}
-
-.instagram{
-
-background:linear-gradient(
-135deg,
-#833AB4,
-#E1306C,
-#FCAF45);
-
-}
-/*=========================================================
-                TARJETA INFORMATIVA
-=========================================================*/
-
-.card{
-
-max-width:700px;
-
-margin:0 auto 50px;
-
-padding:34px;
-
-background:rgba(255,255,255,.82);
-
-backdrop-filter:blur(18px);
-
--webkit-backdrop-filter:blur(18px);
-
-border-radius:30px;
-
-box-shadow:var(--shadow);
-
-}
-
-.card h2{
-
-text-align:center;
-
-font-size:2rem;
-
-font-weight:800;
-
-margin-bottom:28px;
-
-color:var(--dark);
-
-}
-
-.feature{
-
-display:flex;
-
-align-items:flex-start;
-
-gap:18px;
-
-padding:18px;
-
-border-radius:18px;
-
-transition:.30s;
-
-margin-bottom:14px;
-
-}
-
-.feature:last-child{
-
-margin-bottom:0;
-
-}
-
-.feature:hover{
-
-background:rgba(37,99,235,.05);
-
-transform:translateX(6px);
-
-}
-
-.feature i{
-
-font-size:26px;
-
-color:var(--primary);
-
-min-width:30px;
-
-margin-top:3px;
-
-}
-
-.feature h3{
-
-font-size:1.08rem;
-
-margin-bottom:6px;
-
-color:var(--dark);
-
-}
-
-.feature p{
-
-color:var(--gray);
-
-line-height:1.75;
-
-}
-
-/*=========================================================
-                    FOOTER
-=========================================================*/
-
-footer{
-
-text-align:center;
-
-padding:15px 0 40px;
-
-}
-
-.footer-logo{
-
-width:80px;
-
-margin:0 auto 16px;
-
-display:block;
-
-filter:drop-shadow(0 12px 24px rgba(37,99,235,.18));
-
-}
-
-footer p{
-
-font-size:1rem;
-
-font-weight:700;
-
-margin-bottom:8px;
-
-color:var(--dark);
-
-}
-
-footer span{
-
-display:block;
-
-max-width:420px;
-
-margin:auto;
-
-font-size:.95rem;
-
-line-height:1.8;
-
-color:var(--gray);
-
-}
-
-/*=========================================================
-                    IMÁGENES
-=========================================================*/
-
-img{
-
-max-width:100%;
-
-display:block;
-
-}
-
-a{
-
--webkit-tap-highlight-color:transparent;
-
-}
-
-/*=========================================================
-                    RESPONSIVE
-=========================================================*/
-
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:3rem;
-
-}
-
-.hero-logo img{
-
-width:190px;
-
-}
-
-.partners-track{
-
-gap:42px;
-
-}
-
-.partners-track img{
-
-height:36px;
-
-}
-
-.button{
-
-font-size:18px;
-
-padding:20px;
-
-}
-
-.card{
-
-padding:28px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-body{
-
-padding:24px 16px;
-
-}
-
-.hero h1{
-
-font-size:2.4rem;
-
-}
-
-.hero-logo img{
-
-width:170px;
-
-}
-
-.hero-subtitle{
-
-font-size:.96rem;
-
-}
-
-.partners h2{
-
-font-size:1.55rem;
-
-}
-
-.partners-description{
-
-font-size:.92rem;
-
-margin-bottom:22px;
-
-}
-
-.partners-track{
-
-gap:28px;
-
-}
-
-.partners-track img{
-
-height:30px;
-
-}
-
-.button{
-
-padding:18px;
-
-font-size:17px;
-
-border-radius:20px;
-
-}
-
-.card{
-
-padding:22px;
-
-border-radius:24px;
-
-}
-
-.footer-logo{
-
-width:70px;
-
-}
-
-}
-
-/*=========================================================
-                SCROLL
-=========================================================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#EEF4FF;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#2563EB;
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#1D4ED8;
-
-}
-
-::selection{
-
-background:#2563EB;
-
-color:#fff;
 
 }
