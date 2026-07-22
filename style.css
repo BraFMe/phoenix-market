@@ -1,24 +1,41 @@
-/*====================================
-        PHOENIX MARKET 6.0
-        PREMIUM APPLE EDITION
-====================================*/
+/*==========================================
+        PHOENIX MARKET 7.0 PREMIUM
+        PARTE 1
+==========================================*/
 
 :root{
 
---primary:#2563eb;
---secondary:#111827;
---gray:#6b7280;
---card:rgba(255,255,255,.55);
+--primary:#2563EB;
+--primary-dark:#1D4ED8;
 
---shadow:
-0 25px 60px rgba(0,0,0,.10);
+--dark:#111827;
+
+--gray:#6B7280;
+
+--white:#FFFFFF;
+
+--card:rgba(255,255,255,.72);
+
+--shadow:0 20px 60px rgba(15,23,42,.12);
+
+--radius:28px;
 
 }
 
 *{
+
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
 }
 
 body{
@@ -26,21 +43,54 @@ body{
 font-family:'Inter',sans-serif;
 
 background:
+
 linear-gradient(
 180deg,
-#eef5ff 0%,
-#f7f9fc 45%,
+#edf5ff 0%,
+#f6f9fd 45%,
 #ffffff 100%);
 
-color:#111827;
+color:var(--dark);
 
 min-height:100vh;
 
-padding:42px 20px;
-
 overflow-x:hidden;
 
+padding:40px 20px;
+
 }
+
+/*=========================
+      FONDO
+=========================*/
+
+.background{
+
+position:fixed;
+
+width:520px;
+
+height:520px;
+
+background:#3B82F630;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+top:-180px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:-1;
+
+}
+
+/*=========================
+      CONTENEDOR
+=========================*/
 
 .container{
 
@@ -48,21 +98,25 @@ max-width:620px;
 
 margin:auto;
 
-animation:fadeUp 1s ease;
-
 }
+
+/*=========================
+        HERO
+=========================*/
 
 .hero{
 
 text-align:center;
 
-margin-bottom:55px;
+padding-top:10px;
 
-animation:fadeDown .9s ease;
+margin-bottom:45px;
+
+animation:fadeDown .8s ease;
 
 }
 
-.logo-wrapper{
+.logo-box{
 
 display:flex;
 
@@ -70,76 +124,83 @@ justify-content:center;
 
 align-items:center;
 
-margin-bottom:-10px;
+margin-bottom:-12px;
 
 }
 
 .logo{
 
-width:280px;
+width:300px;
 
-height:280px;
+max-width:88vw;
+
+height:auto;
+
+display:block;
+
+margin:auto;
 
 object-fit:contain;
 
-filter:drop-shadow(0 25px 55px rgba(0,0,0,.18));
+filter:drop-shadow(0 22px 45px rgba(37,99,235,.20));
+
+transition:.35s ease;
 
 animation:float 5s ease-in-out infinite;
-
-transition:.4s;
 
 }
 
 .logo:hover{
 
-transform:scale(1.06);
+transform:scale(1.05);
 
 }
 
 .hero h1{
 
-font-size:3.3rem;
+font-size:3.2rem;
 
 font-weight:800;
 
 letter-spacing:-2px;
 
-margin-bottom:14px;
+margin-bottom:12px;
 
-color:#111827;
+color:var(--dark);
 
 }
 
-.slogan{
+.subtitle{
 
-font-size:1.15rem;
-
-line-height:1.8;
-
-color:#6b7280;
-
-max-width:520px;
+max-width:500px;
 
 margin:auto;
 
-}
-/*====================================
-            BOTONES
-====================================*/
+font-size:1.08rem;
 
-.links{
+line-height:1.8;
+
+color:var(--gray);
+
+}
+
+/*=========================
+        BOTONES
+=========================*/
+
+.buttons{
 
 display:flex;
 
 flex-direction:column;
 
-gap:22px;
+gap:18px;
 
-margin-bottom:48px;
+margin-bottom:45px;
 
 }
 
-.btn{
+.button{
 
 display:flex;
 
@@ -147,11 +208,11 @@ align-items:center;
 
 justify-content:center;
 
-gap:16px;
+gap:14px;
 
 padding:22px;
 
-border-radius:26px;
+border-radius:24px;
 
 text-decoration:none;
 
@@ -161,55 +222,35 @@ font-weight:700;
 
 color:#fff;
 
-transition:.35s;
+box-shadow:var(--shadow);
+
+transition:.30s ease;
+
+}
+
+.button:hover{
+
+transform:translateY(-5px);
 
 box-shadow:
 
-0 15px 35px rgba(0,0,0,.12),
-
-0 5px 12px rgba(0,0,0,.08);
-
-backdrop-filter:blur(18px);
-
--webkit-backdrop-filter:blur(18px);
+0 28px 60px rgba(0,0,0,.16);
 
 }
 
-.btn i{
+.button i{
 
-font-size:22px;
-
-}
-
-.btn:hover{
-
-transform:translateY(-6px) scale(1.02);
-
-box-shadow:
-
-0 28px 55px rgba(0,0,0,.18);
+font-size:20px;
 
 }
 
-.principal{
+.primary{
 
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
-
-}
-
-.principal:hover{
-
-background:linear-gradient(135deg,#3b82f6,#2563eb);
+background:linear-gradient(135deg,#2563EB,#1D4ED8);
 
 }
 
-.destacados{
-
-background:#1f2937;
-
-}
-
-.destacados:hover{
+.dark{
 
 background:#111827;
 
@@ -217,25 +258,13 @@ background:#111827;
 
 .whatsapp{
 
-background:linear-gradient(135deg,#25D366,#16a34a);
-
-}
-
-.whatsapp:hover{
-
-background:linear-gradient(135deg,#34d399,#22c55e);
+background:linear-gradient(135deg,#25D366,#16A34A);
 
 }
 
 .facebook{
 
-background:linear-gradient(135deg,#1877F2,#2563eb);
-
-}
-
-.facebook:hover{
-
-background:linear-gradient(135deg,#3b82f6,#1d4ed8);
+background:linear-gradient(135deg,#1877F2,#2563EB);
 
 }
 
@@ -246,262 +275,5 @@ background:linear-gradient(
 #833AB4,
 #FD1D1D,
 #FCAF45);
-
-}
-
-.instagram:hover{
-
-filter:brightness(1.08);
-
-}
-/*====================================
-        TARJETA DE CONFIANZA
-====================================*/
-
-.trust{
-
-background:rgba(255,255,255,.70);
-
-backdrop-filter:blur(18px);
-
--webkit-backdrop-filter:blur(18px);
-
-border-radius:30px;
-
-padding:36px 30px;
-
-box-shadow:0 25px 60px rgba(0,0,0,.10);
-
-margin-bottom:45px;
-
-animation:fadeUp .9s ease;
-
-}
-
-.trust h2{
-
-font-size:2rem;
-
-font-weight:800;
-
-text-align:center;
-
-margin-bottom:28px;
-
-color:#111827;
-
-}
-
-.trust ul{
-
-list-style:none;
-
-display:flex;
-
-flex-direction:column;
-
-gap:18px;
-
-}
-
-.trust li{
-
-display:flex;
-
-align-items:flex-start;
-
-gap:14px;
-
-font-size:1rem;
-
-line-height:1.7;
-
-color:#4b5563;
-
-}
-
-.trust i{
-
-color:#2563eb;
-
-font-size:22px;
-
-margin-top:3px;
-
-}
-
-/*====================================
-            FOOTER
-====================================*/
-
-footer{
-
-text-align:center;
-
-padding:20px 0;
-
-color:#6b7280;
-
-}
-
-footer p{
-
-font-weight:700;
-
-margin-bottom:6px;
-
-color:#111827;
-
-}
-
-footer small{
-
-font-size:.95rem;
-
-}
-
-/*====================================
-          ANIMACIONES
-====================================*/
-
-@keyframes fadeDown{
-
-from{
-
-opacity:0;
-
-transform:translateY(-30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(35px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/*====================================
-          RESPONSIVE
-====================================*/
-
-@media(max-width:640px){
-
-body{
-
-padding:28px 18px;
-
-}
-
-.logo{
-
-width:220px;
-
-height:220px;
-
-}
-
-.hero h1{
-
-font-size:2.5rem;
-
-}
-
-.slogan{
-
-font-size:1rem;
-
-}
-
-.btn{
-
-padding:20px;
-
-font-size:17px;
-
-}
-
-.trust{
-
-padding:28px 22px;
-
-}
-
-.trust h2{
-
-font-size:1.7rem;
-
-}
-
-}
-
-@media(max-width:420px){
-
-.logo{
-
-width:190px;
-
-height:190px;
-
-}
-
-.hero h1{
-
-font-size:2.1rem;
-
-}
-
-.btn{
-
-font-size:16px;
-
-padding:18px;
-
-}
 
 }
