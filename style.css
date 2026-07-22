@@ -2,772 +2,437 @@
             PHOENIX MARKET - CSS FINAL
 ==================================================*/
 
-:root{
-
---azul:#2563eb;
---azul2:#1d4ed8;
---oscuro:#111827;
---gris:#6b7280;
---blanco:#ffffff;
---fondo:#eef4ff;
-
---radio:28px;
-
---sombra:
-0 18px 45px rgba(15,23,42,.10);
-
+:root {
+  --azul: #2563eb;
+  --azul2: #1d4ed8;
+  --oscuro: #111827;
+  --gris: #6b7280;
+  --blanco: #ffffff;
+  --fondo: #eef4ff;
+  --radio: 28px;
+  --sombra: 0 18px 45px rgba(15, 23, 42, .10);
 }
 
-*{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-
-scroll-behavior:smooth;
-
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-
-font-family:'Poppins',sans-serif;
-
-background:linear-gradient(
-180deg,
-#eef4ff 0%,
-#f7f9ff 45%,
-#ffffff 100%);
-
-color:var(--oscuro);
-
-overflow-x:hidden;
-
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #eef4ff 0%, #f7f9ff 45%, #ffffff 100%);
+  color: var(--oscuro);
+  overflow-x: hidden;
 }
 
-/*================ HERO =================*/
+/*================ HERO (LOGO SUPERIOR ANIMADO) =================*/
 
-.hero{
-
-max-width:760px;
-
-margin:0 auto;
-
-padding:50px 22px 30px;
-
-text-align:center;
-
+.hero {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 50px 22px 30px;
+  text-align: center;
 }
 
-.hero-logo{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-margin-bottom:18px;
-
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
 }
 
-.hero-logo img{
-
-width:125px;
-
-height:auto;
-
-display:block;
-
-animation:floatLogo 4s ease-in-out infinite;
-
-filter:drop-shadow(
-0 12px 25px rgba(37,99,235,.20));
-
+/* Tamaño mejorado y animación resaltada para el logo superior */
+.hero-logo img {
+  width: 140px; /* Tamaño con más presencia */
+  height: auto;
+  display: block;
+  animation: floatLogo 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 12px 25px rgba(37, 99, 235, .30));
 }
 
-@keyframes floatLogo{
-
-0%{
-
-transform:translateY(0px);
-
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 8px 18px rgba(37, 99, 235, .25));
+  }
+  50% {
+    transform: translateY(-10px) scale(1.03); /* Eleva y da presencia */
+    filter: drop-shadow(0 18px 30px rgba(37, 99, 235, .45)); /* Brillo resaltado */
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 8px 18px rgba(37, 99, 235, .25));
+  }
 }
 
-50%{
-
-transform:translateY(-8px);
-
+.hero h1 {
+  font-size: 3.3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 14px;
 }
 
-100%{
-
-transform:translateY(0px);
-
+.hero h1 .dark {
+  color: #0f172a;
 }
 
+.hero h1 .blue {
+  color: var(--azul);
 }
 
-.hero h1{
-
-font-size:3.3rem;
-
-font-weight:800;
-
-line-height:1.1;
-
-margin-bottom:14px;
-
+.hero-subtitle {
+  max-width: 560px;
+  margin: auto;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--gris);
 }
 
-.hero h1 .dark{
+/*================ ALIADOS COMERCIALES =================*/
 
-color:#0f172a;
-
+.partners {
+  max-width: 920px;
+  margin: 40px auto;
+  text-align: center;
 }
 
-.hero h1 .blue{
-
-color:var(--azul);
-
+.partners h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
 }
 
-.hero-subtitle{
-
-max-width:560px;
-
-margin:auto;
-
-font-size:1.08rem;
-
-line-height:1.8;
-
-color:var(--gris);
-
+.partners-description {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--gris);
 }
 
-/*================ ALIADOS =================*/
+/*================ CINTA / MARQUEE =================*/
 
-.partners{
-
-max-width:920px;
-
-margin:40px auto;
-
-text-align:center;
-
+.partners-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 15px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
-.partners h2{
-
-font-size:2rem;
-
-font-weight:800;
-
-margin-bottom:12px;
-
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+  width: max-content;
+  animation: marquee 26s linear infinite;
 }
 
-.partners-description{
-
-max-width:650px;
-
-margin:0 auto 28px;
-
-font-size:1rem;
-
-line-height:1.8;
-
-color:var(--gris);
-
+.partners-track img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  transition: .35s;
+  opacity: .90;
 }
 
-/*================ CINTA =================*/
-
-.partners-marquee{
-
-width:100%;
-
-overflow:hidden;
-
-position:relative;
-
-padding:15px 0;
-
-mask-image:linear-gradient(
-90deg,
-transparent,
-#000 8%,
-#000 92%,
-transparent);
-
--webkit-mask-image:linear-gradient(
-90deg,
-transparent,
-#000 8%,
-#000 92%,
-transparent);
-
+.partners-track img:hover {
+  transform: scale(1.12);
+  opacity: 1;
 }
 
-.partners-track{
-
-display:flex;
-
-align-items:center;
-
-gap:55px;
-
-width:max-content;
-
-animation:marquee 26s linear infinite;
-
-}
-
-.partners-track img{
-
-height:46px;
-
-width:auto;
-
-object-fit:contain;
-
-transition:.35s;
-
-opacity:.90;
-
-}
-
-.partners-track img:hover{
-
-transform:scale(1.12);
-
-opacity:1;
-
-}
-
-@keyframes marquee{
-
-0%{
-
-transform:translateX(0);
-
-}
-
-100%{
-
-transform:translateX(-50%);
-
-}
-
-}
-/*==================================================
-                BOTONES PRINCIPALES
-==================================================*/
-
-.actions{
-
-max-width:760px;
-
-margin:35px auto 45px;
-
-padding:0 22px;
-
-display:flex;
-
-flex-direction:column;
-
-gap:18px;
-
-}
-
-.action-btn{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:12px;
-
-height:72px;
-
-border-radius:22px;
-
-text-decoration:none;
-
-font-size:1.28rem;
-
-font-weight:700;
-
-color:#fff;
-
-transition:.30s;
-
-box-shadow:0 12px 28px rgba(0,0,0,.12);
-
-}
-
-.action-btn:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 20px 40px rgba(0,0,0,.18);
-
-}
-
-.btn-products{
-
-background:linear-gradient(
-135deg,
-#3b82f6,
-#1d4ed8);
-
-}
-
-.btn-catalog{
-
-background:linear-gradient(
-135deg,
-#1f2937,
-#111827);
-
-}
-
-.btn-whatsapp{
-
-background:linear-gradient(
-135deg,
-#22c55e,
-#16a34a);
-
-}
-
-.btn-instagram{
-
-background:linear-gradient(
-135deg,
-#8b5cf6,
-#ec4899,
-#f59e0b);
-
-}
-
-.action-btn i{
-
-font-size:1.5rem;
-
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /*==================================================
-              ¿POR QUÉ ELEGIRNOS?
+                BOTONES PRINCIPALES (Sincronizado con HTML)
 ==================================================*/
 
-.why{
-
-max-width:760px;
-
-margin:0 auto 60px;
-
-padding:0 22px;
-
+.buttons {
+  max-width: 760px;
+  margin: 35px auto 45px;
+  padding: 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.why-card{
-
-background:#fff;
-
-border-radius:32px;
-
-padding:38px 30px;
-
-box-shadow:var(--sombra);
-
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 68px;
+  border-radius: 22px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  transition: .30s;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
 }
 
-.why-card h2{
-
-text-align:center;
-
-font-size:2rem;
-
-margin-bottom:30px;
-
-font-weight:800;
-
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .18);
 }
 
-.why-grid{
-
-display:grid;
-
-grid-template-columns:1fr;
-
-gap:24px;
-
+.button.primary {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
 }
 
-.why-item{
-
-display:flex;
-
-align-items:flex-start;
-
-gap:18px;
-
+.button.dark {
+  background: linear-gradient(135deg, #1f2937, #111827);
 }
 
-.why-icon{
-
-width:56px;
-
-height:56px;
-
-border-radius:18px;
-
-background:linear-gradient(
-135deg,
-#3b82f6,
-#2563eb);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-flex-shrink:0;
-
-color:#fff;
-
-font-size:1.35rem;
-
-box-shadow:0 10px 22px rgba(37,99,235,.25);
-
+.button.whatsapp {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
 }
 
-.why-item h3{
-
-font-size:1.15rem;
-
-margin-bottom:6px;
-
-font-weight:700;
-
-color:#111827;
-
+.button.instagram {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899, #f59e0b);
 }
 
-.why-item p{
-
-font-size:.98rem;
-
-line-height:1.7;
-
-color:#6b7280;
-
+.button i {
+  font-size: 1.5rem;
 }
+
 /*==================================================
-                    FOOTER
+              ¿POR QUÉ ELEGIRNOS? (Sincronizado con HTML)
 ==================================================*/
 
-footer{
-
-max-width:760px;
-
-margin:0 auto;
-
-padding:10px 22px 50px;
-
-text-align:center;
-
+.card {
+  max-width: 760px;
+  margin: 0 auto 60px;
+  padding: 38px 30px;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: var(--sombra);
+  transition: .35s;
 }
 
-.footer-logo{
-
-width:58px;
-
-height:auto;
-
-margin:0 auto 16px;
-
-display:block;
-
-opacity:.95;
-
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, .14);
 }
 
-footer p{
-
-font-size:1rem;
-
-font-weight:700;
-
-color:#111827;
-
-margin-bottom:8px;
-
+.card h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 800;
 }
 
-footer span{
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 24px;
+}
 
-display:block;
+.feature:last-child {
+  margin-bottom: 0;
+}
 
-max-width:500px;
+.feature i {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, .25);
+}
 
-margin:auto;
+.feature h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: #111827;
+}
 
-font-size:.94rem;
+.feature p {
+  font-size: .98rem;
+  line-height: 1.7;
+  color: #6b7280;
+}
 
-line-height:1.7;
+/*==================================================
+                    FOOTER (LOGO INFERIOR PEQUEÑO FIXED)
+==================================================*/
 
-color:#6B7280;
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 10px 22px 50px;
+  text-align: center;
+}
 
+.footer-logo {
+  width: 58px !important; /* Mantiene el tamaño controlado exacto */
+  max-width: 58px;
+  height: auto;
+  margin: 0 auto 16px;
+  display: block;
+  opacity: .95;
+}
+
+footer p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+footer span {
+  display: block;
+  max-width: 500px;
+  margin: auto;
+  font-size: .94rem;
+  line-height: 1.7;
+  color: #6B7280;
 }
 
 /*==================================================
                 EFECTOS
 ==================================================*/
 
-.action-btn,
+.button,
 .hero-logo img,
 .partners-track img,
-.why-card{
-
-transition:.35s;
-
+.card {
+  transition: .35s;
 }
 
-.partners-track img{
-
-filter:drop-shadow(
-0 6px 14px rgba(0,0,0,.08));
-
-}
-
-.why-card:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-0 28px 60px rgba(15,23,42,.14);
-
+.partners-track img {
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .08));
 }
 
 /*==================================================
                 RESPONSIVE
 ==================================================*/
 
-@media(max-width:768px){
-
-.hero{
-
-padding-top:40px;
-
+@media(max-width: 768px) {
+  .hero {
+    padding-top: 40px;
+  }
+  .hero-logo img {
+    width: 120px;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .partners-track {
+    gap: 38px;
+  }
+  .partners-track img {
+    height: 40px;
+  }
+  .button {
+    height: 64px;
+    font-size: 1.12rem;
+  }
+  .card {
+    padding: 30px 24px;
+  }
 }
 
-.hero-logo img{
-
-width:110px;
-
-}
-
-.hero h1{
-
-font-size:2.8rem;
-
-}
-
-.hero-subtitle{
-
-font-size:1rem;
-
-}
-
-.partners-track{
-
-gap:38px;
-
-}
-
-.partners-track img{
-
-height:40px;
-
-}
-
-.action-btn{
-
-height:66px;
-
-font-size:1.12rem;
-
-}
-
-.why-card{
-
-padding:30px 24px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-body{
-
-overflow-x:hidden;
-
-}
-
-.hero{
-
-padding:35px 18px 25px;
-
-}
-
-.hero-logo img{
-
-width:95px;
-
-}
-
-.hero h1{
-
-font-size:2.25rem;
-
-}
-
-.hero-subtitle{
-
-font-size:.95rem;
-
-}
-
-.partners{
-
-margin:30px auto;
-
-}
-
-.partners h2{
-
-font-size:1.6rem;
-
-}
-
-.partners-description{
-
-font-size:.92rem;
-
-padding:0 14px;
-
-}
-
-.partners-track{
-
-gap:30px;
-
-}
-
-.partners-track img{
-
-height:34px;
-
-}
-
-.actions{
-
-padding:0 16px;
-
-}
-
-.action-btn{
-
-height:62px;
-
-font-size:1rem;
-
-border-radius:18px;
-
-}
-
-.action-btn i{
-
-font-size:1.25rem;
-
-}
-
-.why{
-
-padding:0 16px;
-
-}
-
-.why-card{
-
-border-radius:24px;
-
-padding:24px 20px;
-
-}
-
-.why-card h2{
-
-font-size:1.6rem;
-
-}
-
-.why-icon{
-
-width:48px;
-
-height:48px;
-
-font-size:1.1rem;
-
-}
-
-.footer-logo{
-
-width:52px;
-
-}
-
-footer{
-
-padding-bottom:30px;
-
-}
-
+@media(max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+  .hero {
+    padding: 35px 18px 25px;
+  }
+  .hero-logo img {
+    width: 105px;
+  }
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+  .hero-subtitle {
+    font-size: .95rem;
+  }
+  .partners {
+    margin: 30px auto;
+  }
+  .partners h2 {
+    font-size: 1.6rem;
+  }
+  .partners-description {
+    font-size: .92rem;
+    padding: 0 14px;
+  }
+  .partners-track {
+    gap: 30px;
+  }
+  .partners-track img {
+    height: 34px;
+  }
+  .buttons {
+    padding: 0 16px;
+  }
+  .button {
+    height: 60px;
+    font-size: 1rem;
+    border-radius: 18px;
+  }
+  .button i {
+    font-size: 1.25rem;
+  }
+  .card {
+    border-radius: 24px;
+    padding: 24px 20px;
+  }
+  .card h2 {
+    font-size: 1.6rem;
+  }
+  .feature i {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+  .footer-logo {
+    width: 50px !important;
+  }
+  footer {
+    padding-bottom: 30px;
+  }
 }
 
 /*==================================================
-                SCROLL
+                SCROLLBAR
 ==================================================*/
 
-::-webkit-scrollbar{
-
-width:8px;
-
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-::-webkit-scrollbar-thumb{
-
-background:#2563EB;
-
-border-radius:20px;
-
+::-webkit-scrollbar-thumb {
+  background: #2563EB;
+  border-radius: 20px;
 }
 
-::selection{
-
-background:#2563EB;
-
-color:#fff;
-
+::selection {
+  background: #2563EB;
+  color: #fff;
 }
